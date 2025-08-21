@@ -5,10 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -68,9 +68,9 @@ public class MasterController {
     }
 
     @FXML
-    void showAutores(ActionEvent event) {
+    void showMotorista(ActionEvent event) {
         limparBotoes(event.getSource());
-        showFXMLFile("CadAutor.fxml");
+        showFXMLFile("CadMotorista.fxml");
     }
 
     @FXML
