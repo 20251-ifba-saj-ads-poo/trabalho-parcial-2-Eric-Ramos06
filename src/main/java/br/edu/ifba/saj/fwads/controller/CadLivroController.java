@@ -1,6 +1,6 @@
 package br.edu.ifba.saj.fwads.controller;
 
-import br.edu.ifba.saj.fwads.Biblioteca;
+import br.edu.ifba.saj.fwads.Dados;
 import br.edu.ifba.saj.fwads.model.Autor;
 import br.edu.ifba.saj.fwads.model.Livro;
 import javafx.event.ActionEvent;
@@ -49,7 +49,7 @@ public class CadLivroController {
 
             @Override
             public Autor fromString(String stringAutor) {
-                return Biblioteca.listaAutores
+                return Dados.listaAutores
                     .stream()
                     .filter(autor -> stringAutor.equals(autor.getNome() + ":" + autor.getEmail()))
                     .findAny()
@@ -70,7 +70,7 @@ public class CadLivroController {
     }
 
     private void carregarListaAutores() {
-        slAutor.setItems(Biblioteca.listaAutores);
+        slAutor.setItems(Dados.listaAutores);
     }
 
 }

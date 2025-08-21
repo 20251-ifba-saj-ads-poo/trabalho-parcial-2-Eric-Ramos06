@@ -1,6 +1,6 @@
 package br.edu.ifba.saj.fwads.controller;
 
-import br.edu.ifba.saj.fwads.Biblioteca;
+import br.edu.ifba.saj.fwads.Dados;
 import br.edu.ifba.saj.fwads.model.Autor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +26,7 @@ public class CadAutorController {
                     txCPF.getText());
         new Alert(AlertType.INFORMATION, 
         "Cadastrando Autor:"+novoAutor.getNome()).showAndWait();
-        Biblioteca.listaAutores.add(novoAutor);
+        Dados.listaAutores.add(novoAutor);
         limparTela();
     }
     @FXML

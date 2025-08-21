@@ -1,5 +1,7 @@
 package br.edu.ifba.saj.fwads.model;
 
+import java.time.LocalDateTime;
+
 public abstract class AbstractModel<T> {
     private T id;
     private LocalDateTime createdAt;
