@@ -19,7 +19,8 @@ public class CadMotoristaController {
                                                 txCPF.getText());
 
         new Alert(AlertType.INFORMATION, 
-        "Cadastrando Motorista(Fake):"+novoMotorista.toString()).showAndWait();
+    "Cadastrando Motorista: " + novoMotorista.getNome()).showAndWait();
+
         Dados.listaMotorista.add(novoMotorista);
         limparTela();
 

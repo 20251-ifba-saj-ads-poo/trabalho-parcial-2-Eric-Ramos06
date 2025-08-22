@@ -2,6 +2,7 @@ package br.edu.ifba.saj.fwads;
 
 import java.io.IOException;
 
+import br.edu.ifba.saj.fwads.model.Usuario;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -45,7 +46,9 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
-    }
+    Dados.listaUsuario.add(new Usuario("admin", "admin", Usuario.TipoUsuario.ADMIN));
+    Dados.listaUsuario.add(new Usuario("teste", "1234", Usuario.TipoUsuario.PASSAGEIRO));
+    launch();
+}
 
 }

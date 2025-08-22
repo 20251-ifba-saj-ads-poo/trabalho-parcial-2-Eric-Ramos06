@@ -9,26 +9,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="masterPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="933.0" styleClass="main" stylesheets="@assets/style.css" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifba.saj.fwads.controller.MasterController">
    <top>
-      <AnchorPane prefHeight="102.0" prefWidth="811.0" styleClass="top" stylesheets="@assets/style.css" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="0.0" prefWidth="933.0" styleClass="top" stylesheets="@assets/style.css" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="100.0" fitWidth="292.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/LogoH.png" />
                </image>
             </ImageView>
-            <Label fx:id="userEmail" layoutX="758.0" layoutY="32.0" onMouseClicked="#logOff" text="email@email" textFill="#8282ff" AnchorPane.rightAnchor="15.0">
+            <Label fx:id="userEmail" layoutX="849.0" layoutY="43.0" onMouseClicked="#logOff" text="email@email" textFill="#8282ff" AnchorPane.rightAnchor="15.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <graphic>
-                  <Circle fx:id="userPicture" fill="DODGERBLUE" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-               </graphic>
             </Label>
+            <ImageView fx:id="userPicture" fitHeight="56.0" fitWidth="53.0" layoutX="796.0" layoutY="24.0" AnchorPane.rightAnchor="84.0">
+               <image>
+                  <Image url="@assets/profile.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
    </top>
    <left>
@@ -126,4 +127,11 @@
             </Button>
          </children></VBox>
    </left>
+   <center>
+      <ImageView fitHeight="426.0" fitWidth="581.0" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@assets/Bus rote.jpg" />
+         </image>
+      </ImageView>
+   </center>
 </BorderPane>

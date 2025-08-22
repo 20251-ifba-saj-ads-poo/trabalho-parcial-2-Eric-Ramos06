@@ -13,8 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Circle;
-
+import javafx.scene.image.ImageView;
 public class MasterController {
 
     @FXML
@@ -27,7 +26,7 @@ public class MasterController {
     private Label userEmail;
 
     @FXML
-    private Circle userPicture;
+    private ImageView userPicture;
 
     @FXML
     void logOff(MouseEvent event) {
@@ -74,9 +73,9 @@ public class MasterController {
     }
 
     @FXML
-    void showLivros(ActionEvent event) {
+    void showOnibus(ActionEvent event) {
         limparBotoes(event.getSource());
-        showFXMLFile("CadLivro.fxml");
+        showFXMLFile("CadOnibus.fxml");
     }
 
     private void showFXMLFile(String resourceName) {
