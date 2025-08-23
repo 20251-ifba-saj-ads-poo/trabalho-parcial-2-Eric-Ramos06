@@ -6,16 +6,26 @@ import java.util.UUID;
 
 public class Rota extends AbstractModel<UUID> {
 
+    private String nome;
     private Ponto pontoInitial;
     private Ponto pontoFinal;
     private List<Ponto> paradas;
 
-    public Rota(Ponto pontoInitial, Ponto pontoFinal, List<Ponto> paradas) {
+    public Rota(String nome, Ponto pontoInitial, Ponto pontoFinal, List<Ponto> paradas) {
+        this.nome = nome;
         this.pontoInitial = pontoInitial;
         this.pontoFinal = pontoFinal;
         this.paradas = new ArrayList<>(paradas);
         this.setCreatedAt(java.time.LocalDateTime.now());
         this.setUpdatedAt(java.time.LocalDateTime.now());
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Ponto getPontoInitial() {

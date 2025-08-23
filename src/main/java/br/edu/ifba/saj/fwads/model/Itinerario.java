@@ -1,31 +1,35 @@
 package br.edu.ifba.saj.fwads.model;
 
+
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Itinerario  extends AbstractModel<UUID>{
-    private LocalDateTime horaPartida;
-    private Rota rota;
+    private String horaPartida;
+    private List<Rota> Rotass;
 
-    public Itinerario(LocalDateTime horaPartida, Rota rota) {
+
+    public Itinerario(String horaPartida, ArrayList<Rota> rotas) {
         this.horaPartida = horaPartida;
-        this.rota = rota;
+        this.Rotass = new ArrayList<>(rotas);
         this.setCreatedAt(LocalDateTime.now());
         this.setUpdatedAt(LocalDateTime.now());
     }
 
-    public LocalDateTime getHoraPartida() {
+    public String getHoraPartida() {
         return horaPartida;
     }    
-    public void setHoraPartida(LocalDateTime horaPartida) {
+    public void setHoraPartida(String horaPartida) {
         this.horaPartida = horaPartida;
     }
 
-    public Rota getRota() {
-        return rota;
+    public List<Rota> getRotas() {
+        return Rotass;
     }
-    public void setRota(Rota rota) {
-        this.rota = rota;
+    public void setRotas(List<Rota> rotas) {
+        Rotass = rotas;
     }
 
 }

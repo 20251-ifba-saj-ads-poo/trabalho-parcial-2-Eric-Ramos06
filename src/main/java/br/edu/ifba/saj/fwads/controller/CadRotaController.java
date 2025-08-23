@@ -13,6 +13,9 @@ import javafx.util.StringConverter;
 public class CadRotaController {
 
     @FXML
+    private TextField txNome;
+
+    @FXML
     private TextField txPontoInitial;
 
     @FXML
@@ -20,17 +23,34 @@ public class CadRotaController {
 
     @FXML
     private ChoiceBox<Ponto> slPonto;
+
     @FXML
     private void salvarRota() {
+
+        String nome = txNome.getText();
         Ponto pontoInicial = slPonto.getValue();
         Ponto pontoFinal = slPonto.getValue();
-        Rota novaRota = new Rota(pontoInicial, pontoFinal, Dados.listaPonto);
+        Rota novaRota = new Rota(nome,pontoInicial, pontoFinal, Dados.listaPonto);
 
+        if (nome == null || nome.trim().isEmpty()) {
+        new Alert(AlertType.WARNING, "O nome da rota não pode estar vazio.").showAndWait();
+        return;
+    }
+
+    if (pontoInicial == null || pontoFinal == null) {
+        new Alert(AlertType.WARNING, "Selecione os pontos inicial e final da rota.").showAndWait();
+        return;
+    }
+
+    else if (Dados.listaPonto == null || Dados.listaPonto.isEmpty()) {
+        new Alert(AlertType.ERROR, "Não há pontos cadastrados no sistema.").showAndWait();
+        return;
+    }
         new Alert(AlertType.INFORMATION,
-                "Cadastrando Rota:" + novaRota.getPontoInitial() + " - " + novaRota.getPontoFinal()).showAndWait();
+                "Cadastrando Rota:" + novaRota.getNome() + " - " + novaRota.getPontoInitial().getEndereco() + " a " + novaRota.getPontoFinal().getEndereco()).showAndWait();
         Dados.listaRota.add(novaRota);
         limparTela();
-
+        
     }
     @FXML 
     private void initialize() {
