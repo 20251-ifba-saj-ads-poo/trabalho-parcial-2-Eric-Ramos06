@@ -1,6 +1,3 @@
-/**
- * Sample Skeleton for 'Login.fxml' Controller Class
- */
 
 package br.edu.ifba.saj.fwads.controller;
 
@@ -14,18 +11,22 @@ import javafx.scene.control.Alert.AlertType;
 
 public class LoginController {
 
-    @FXML // fx:id="txSenha"
-    private PasswordField txSenha; // Value injected by FXMLLoader
+    @FXML
+    private PasswordField txSenha;
 
-    @FXML // fx:id="txUsuario"
-    private TextField txUsuario; // Value injected by FXMLLoader
+    @FXML
+    private TextField txUsuario;
 
     @FXML
     void entrar(ActionEvent event) {
         if(txUsuario.getText().equals("admin") && txSenha.getText().equals("admin")){
             new Alert(AlertType.INFORMATION, "Usuário e senha corretos").showAndWait();
             App.setRoot("controller/Master.fxml");
-        }else{
+            }else if(txUsuario.getText().equals("") && txSenha.getText().equals("")){
+            new Alert(AlertType.INFORMATION, "Entrando como visitante").showAndWait();
+            App.setRoot("controller/Master.fxml");
+        }
+        else{
             new Alert(AlertType.ERROR, "Usuário ou senha inválidos").show();
         }
     }

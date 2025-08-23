@@ -78,6 +78,30 @@ public class MasterController {
         showFXMLFile("CadOnibus.fxml");
     }
 
+    @FXML
+    void showPonto(ActionEvent event) {
+        limparBotoes(event.getSource());
+        showFXMLFile("CadPonto.fxml");
+    }
+
+    @FXML
+    void showRota(ActionEvent event) {
+        limparBotoes(event.getSource());
+        showFXMLFile("CadRota.fxml");
+    }
+
+    @FXML
+    void showItinerario(ActionEvent event) {
+        limparBotoes(event.getSource());
+        showFXMLFile("CadItinerario.fxml");
+    }
+
+    @FXML
+    void showLinha(ActionEvent event) {
+        limparBotoes(event.getSource());
+        showFXMLFile("CadLinha.fxml");
+    }
+
     private void showFXMLFile(String resourceName) {
         try {            
             Pane fxmlCarregado = FXMLLoader.load(getClass().getResource(resourceName));

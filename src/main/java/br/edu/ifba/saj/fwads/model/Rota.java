@@ -1,5 +1,6 @@
 package br.edu.ifba.saj.fwads.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -12,7 +13,7 @@ public class Rota extends AbstractModel<UUID> {
     public Rota(Ponto pontoInitial, Ponto pontoFinal, List<Ponto> paradas) {
         this.pontoInitial = pontoInitial;
         this.pontoFinal = pontoFinal;
-        this.paradas = paradas;
+        this.paradas = new ArrayList<>(paradas);
         this.setCreatedAt(java.time.LocalDateTime.now());
         this.setUpdatedAt(java.time.LocalDateTime.now());
     }
@@ -29,10 +30,10 @@ public class Rota extends AbstractModel<UUID> {
     public void setPontoFinal(Ponto pontoFinal) {
         this.pontoFinal = pontoFinal;
     }
-    public List<Ponto> getParadas() {
-        return paradas;
+    public ArrayList<Ponto> getParadas() {
+        return (ArrayList<Ponto>) paradas;
     }
-    public void setParadas(List<Ponto> paradas) {
+    public void setParadas(ArrayList<Ponto> paradas) {
         this.paradas = paradas;
     }
     
