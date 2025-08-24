@@ -31,21 +31,6 @@ public class CadRotaController {
         Ponto pontoInicial = slPonto.getValue();
         Ponto pontoFinal = slPonto.getValue();
         Rota novaRota = new Rota(nome,pontoInicial, pontoFinal, Dados.listaPonto);
-
-        if (nome == null || nome.trim().isEmpty()) {
-        new Alert(AlertType.WARNING, "O nome da rota não pode estar vazio.").showAndWait();
-        return;
-    }
-
-    if (pontoInicial == null || pontoFinal == null) {
-        new Alert(AlertType.WARNING, "Selecione os pontos inicial e final da rota.").showAndWait();
-        return;
-    }
-
-    else if (Dados.listaPonto == null || Dados.listaPonto.isEmpty()) {
-        new Alert(AlertType.ERROR, "Não há pontos cadastrados no sistema.").showAndWait();
-        return;
-    }
         new Alert(AlertType.INFORMATION,
                 "Cadastrando Rota:" + novaRota.getNome() + " - " + novaRota.getPontoInitial().getEndereco() + " a " + novaRota.getPontoFinal().getEndereco()).showAndWait();
         Dados.listaRota.add(novaRota);

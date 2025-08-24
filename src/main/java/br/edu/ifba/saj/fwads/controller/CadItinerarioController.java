@@ -1,6 +1,6 @@
 package br.edu.ifba.saj.fwads.controller;
 
-import java.util.ArrayList;
+
 import br.edu.ifba.saj.fwads.Dados;
 import br.edu.ifba.saj.fwads.model.Itinerario;
 import br.edu.ifba.saj.fwads.model.Rota;
@@ -14,19 +14,21 @@ import javafx.util.StringConverter;
 public class CadItinerarioController {
 
     @FXML
+    private TextField txNome;
+
+    @FXML
     private TextField txHoraPartida;
 
     @FXML
     private ChoiceBox<Rota> slRota;
     @FXML
     private void salvarItinerario() {
+        String nome = txNome.getText();
         String horaPartida = txHoraPartida.getText();
-        ArrayList<Rota> rotas = new ArrayList<>();
-        rotas.add(slRota.getValue());
-        Itinerario novaItinerario = new Itinerario(horaPartida, rotas);
-
+        Rota rota = slRota.getValue();
+        Itinerario novaItinerario = new Itinerario(nome, horaPartida, rota);
         new Alert(AlertType.INFORMATION,
-                "Cadastrando Itinerário:" + novaItinerario.getHoraPartida() + " - " + novaItinerario.getRotas().get(0).getNome()).showAndWait();
+                "Cadastrando Itinerário:" + novaItinerario.getNome() + " - " + novaItinerario.getHoraPartida() + " - " + novaItinerario.getRota().getNome()).showAndWait();
         Dados.listaItinerario.add(novaItinerario);
         limparTela();
 
@@ -58,6 +60,7 @@ public class CadItinerarioController {
 
     @FXML
     private void limparTela() {
+        txNome.setText("");
         txHoraPartida.setText("");
     }
 

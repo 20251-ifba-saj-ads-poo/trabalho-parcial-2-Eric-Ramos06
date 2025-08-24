@@ -4,18 +4,26 @@ import java.util.UUID;
 
 public class Linha  extends AbstractModel<UUID>{
 
+    private String Nome;
     private Onibus onibus;
     private Motorista motorista;
-    private Itinerario itinerario;
+    private Itinerario itinerarios;
 
-    Linha (Onibus onibus, Motorista motorista, Itinerario itinerario) {
+    public Linha (String nome, Onibus onibus, Motorista motorista, Itinerario itinerario) {
+        this.Nome = nome;
         this.onibus = onibus;
         this.motorista = motorista;
-        this.itinerario = itinerario;
+        this.itinerarios = itinerario;
         this.setCreatedAt(LocalDateTime.now());
         this.setUpdatedAt(LocalDateTime.now());
     }
 
+    public String getNome() {
+        return Nome;
+    }
+    public void setNome(String nome) {
+        Nome = nome;
+    }
     public Onibus getOnibus() {
         return onibus;
     }
@@ -28,11 +36,13 @@ public class Linha  extends AbstractModel<UUID>{
     public void setMotorista(Motorista motorista) {
         this.motorista = motorista;
     }
-    public Itinerario getItinerario() {
-        return itinerario;
+
+    public Itinerario getItinerarios() {
+        return itinerarios;
     }
-    public void setItinerario(Itinerario itinerario) {
-        this.itinerario = itinerario;
+
+    public void setItinerarios(Itinerario itinerarios) {
+        this.itinerarios = itinerarios;
     }
-    
+
 }
