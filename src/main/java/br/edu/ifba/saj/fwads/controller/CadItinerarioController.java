@@ -4,9 +4,12 @@ package br.edu.ifba.saj.fwads.controller;
 import br.edu.ifba.saj.fwads.Dados;
 import br.edu.ifba.saj.fwads.model.Itinerario;
 import br.edu.ifba.saj.fwads.model.Rota;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.util.StringConverter;
@@ -21,6 +24,10 @@ public class CadItinerarioController {
 
     @FXML
     private ChoiceBox<Rota> slRota;
+
+    @FXML
+    private Button btnSalvar;
+
     @FXML
     private void salvarItinerario() {
         String nome = txNome.getText();
@@ -35,6 +42,22 @@ public class CadItinerarioController {
     }
     @FXML 
     private void initialize() {
+
+        BooleanBinding camposInvalidos = Bindings.createBooleanBinding(
+            () -> txNome.getText() == null
+                   || txNome.getText().trim().isEmpty()
+                   || txHoraPartida.getText() == null
+                   || txHoraPartida.getText().trim().isEmpty()
+                   || slRota.getValue() == null,
+            txNome.textProperty(),
+            txHoraPartida.textProperty(),
+            slRota.valueProperty()
+        );
+
+        // 2. Liga o disable do botão ao BooleanBinding
+        btnSalvar.disableProperty().bind(camposInvalidos);
+    
+
         slRota.setConverter(new StringConverter<Rota>() {
             @Override
             public String toString(Rota obj) {
@@ -60,8 +83,9 @@ public class CadItinerarioController {
 
     @FXML
     private void limparTela() {
-        txNome.setText("");
-        txHoraPartida.setText("");
+        txNome.clear();
+        txHoraPartida.clear();
+        slRota.getSelectionModel().clearSelection();
     }
 
     private void carregarListaRotas() {

@@ -1,14 +1,11 @@
 package br.edu.ifba.saj.fwads.controller;
 
-import java.util.ResourceBundle;
-
 import br.edu.ifba.saj.fwads.Dados;
 import br.edu.ifba.saj.fwads.model.Itinerario;
 import br.edu.ifba.saj.fwads.model.Linha;
 import br.edu.ifba.saj.fwads.model.Motorista;
 import br.edu.ifba.saj.fwads.model.Onibus;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ChoiceBox;
