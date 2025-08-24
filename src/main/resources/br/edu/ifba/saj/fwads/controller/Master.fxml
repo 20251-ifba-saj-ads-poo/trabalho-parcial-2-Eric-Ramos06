@@ -20,12 +20,12 @@
                   <Image url="@assets/LogoH.png" />
                </image>
             </ImageView>
-            <Label fx:id="userEmail" layoutX="849.0" layoutY="43.0" onMouseClicked="#logOff" text="email@email" textFill="#8282ff" AnchorPane.rightAnchor="15.0">
+            <Label fx:id="userEmail" layoutX="881.0" layoutY="44.0" onMouseClicked="#logOff" text="Logout" textFill="WHITE" AnchorPane.rightAnchor="14.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <ImageView fx:id="userPicture" fitHeight="56.0" fitWidth="53.0" layoutX="796.0" layoutY="24.0" AnchorPane.rightAnchor="84.0">
+            <ImageView fx:id="userPicture" fitHeight="56.0" fitWidth="53.0" layoutX="820.0" layoutY="25.0" AnchorPane.rightAnchor="60.0">
                <image>
                   <Image url="@assets/profile.png" />
                </image>
@@ -160,7 +160,7 @@
    <center>
       <ImageView fitHeight="426.0" fitWidth="581.0" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@assets/Bus rote.jpg" />
+            <Image url="@assets/Bus%20rote.jpg" />
          </image>
       </ImageView>
    </center>
