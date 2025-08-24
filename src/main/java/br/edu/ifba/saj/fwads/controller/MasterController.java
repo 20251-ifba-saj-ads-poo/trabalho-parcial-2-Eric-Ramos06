@@ -102,6 +102,12 @@ public class MasterController {
         showFXMLFile("CadLinha.fxml");
     }
 
+    @FXML
+    void showLinhasVisu(ActionEvent event) {
+        limparBotoes(event.getSource());
+        showFXMLFile("ShowLinhasVisu.fxml");
+    }
+
     private void showFXMLFile(String resourceName) {
         try {            
             Pane fxmlCarregado = FXMLLoader.load(getClass().getResource(resourceName));
